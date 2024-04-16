@@ -289,8 +289,8 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
 SOCIAL_AUTH_TWITTER_KEY = '' # Twitter API Key
 SOCIAL_AUTH_TWITTER_SECRET = '' # Twitter API Secret
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '984654631623-gtt4r4acbv97ft088i3vlkq90kjqf4v7.apps.googleusercontent.com' # Google Consumer Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Google Consumer Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '' # Google Consumer Secret
 
 # CHANNEL_LAYERS = {
 #     'default': {
