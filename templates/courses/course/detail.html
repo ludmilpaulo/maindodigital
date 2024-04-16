@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block title %}
+  {{ object.title }}
+{% endblock %}
+
+{% block content %}
+
+{% with subject=object.subject %}
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>{{ object.title }}</h2>
+          <h6>Overview</h6>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  
+                  
+                <img src="{% if object.image %}{{ object.image.url }}{% else %}{% static 'assets/images/no_image.png' %}{% endif %}" alt="">
+                </div>
+                <div class="down-content">
+                  <a href="{% url 'courses:course_list_subject' subject.slug %}"><h4>{{ subject.title }}</h4></a>
+                  <p>Instructor:<b> {{ object.owner.get_full_name }}</p></b>
+                  <p class="description">
+                   {{ object.modules.count }} modules.
+                  </p>
+                  <div class="row">
+                    {{ object.overview|linebreaks }}
+                  
+                    {% if request.user.is_authenticated %}
+                      <form class="col-lg-12" action="{% url 'students:student_enroll_course' %}" method="post">
+                        {% bootstrap_form enroll_form %}
+                        {% csrf_token %}
+                       
+                        <div class="main-button-red">
+                          <fieldset>
+                            {% buttons %}
+                            <button type="submit" id="form-submit" class="main-button-red">Enroll now to the course</button>
+                             {% endbuttons %}
+                          </fieldset>
+                        </div>
+                      </form>
+                    {% else %}
+                           
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{% url 'students:student_registration' %}">Register to enroll</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+ {% endif %}
+   
+  {% endwith %}
+
+{% endblock %}

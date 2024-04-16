@@ -1,0 +1,45 @@
+﻿12-JAN-2021                                      CAPE PENINSULA UNIVERSITY OF TECHNOLOGY                           PAGE :    1
+PROGRAM: zaahis.pc                                       Academic History Report 
+                                                           For Office Use Only
+217144039                                                                                 702 PERSPECTIVE BUILDING      
+ JOAO ANDRE DA FONSECA                                                                    ROALAND STREET                
+                                                                                          8001 CAPE TOWN                     
+Course : ND: ENG: ELECTRICAL (POWER SYSTEMS)(NDELPS)
+ ---------------------------------------------------------------------------------------------------------------------------------
+|Year/  |Course |  Major    | Subject                                  |Year | Exam |Final | Result                       |Credit|
+|Block  |Code   |   Area    |                                          |Mark | Mark | Mark |                              |      |
+|-------|-------|-----------|------------------------------------------|-----|------|------|------------------------------|------|
+|2017/1 |NDELPS |  80901    | DIG101S DIGITAL SYSTEMS 1                |   2 |      |    2 | FAIL                         |      |
+|2017/1 |NDELPS |  80901    | ELE100S ELECTRICAL ENGINEERING 1         |  12 |      |   12 | FAIL                         |      |
+|2017/1 |NDELPS |  80901    | ELT101S ELECTRONICS 1                    |   6 |      |    6 | FAIL                         |      |
+|2017/1 |NDELPS |  150103   | MAT107S MATHEMATICS 1                    |   5 |      |    5 | FAIL                         |      |
+|2017/2 |NDELPS |  50401    | COM105S COMMUNICATION SKILLS 1           |  26 |      |   26 | FAIL                         |      |
+|2017/2 |NDELPS |  80901    | DIG101S DIGITAL SYSTEMS 1                |  28 |      |   28 | FAIL                         |      |
+|2017/2 |NDELPS |  80901    | ELE100S ELECTRICAL ENGINEERING 1         |  41 |      |   41 | FAIL                         |      |
+|2017/2 |NDELPS |  80901    | ELT101S ELECTRONICS 1                    |  37 |      |   37 | FAIL                         |      |
+|2017/2 |NDELPS |  150103   | MAT107S MATHEMATICS 1                    |  35 |      |   35 | FAIL                         |      |
+|2018/1 |NDELPS |  60301    | CMS101S COMPUTER SKILLS 1                |   0 |      |      | FAIL SUBMIN ON ASSESSMENT    |      |
+|2018/1 |NDELPS |  50401    | COM105S COMMUNICATION SKILLS 1           |  32 |      |   32 | FAIL                         |      |
+|2018/1 |NDELPS |  80901    | DIG101S DIGITAL SYSTEMS 1                |  40 |      |   40 | FAIL                         |      |
+|2018/1 |NDELPS |  80901    | ELE100S ELECTRICAL ENGINEERING 1         |  28 |      |   28 | FAIL                         |      |
+|2018/1 |NDELPS |  80901    | ELT101S ELECTRONICS 1                    |  40 |      |   40 | FAIL                         |      |
+|2018/1 |NDELPS |  150103   | MAT107S MATHEMATICS 1                    |  50 |      |   50 | PASS                         | 0.100|
+|2018/2 |NDELPS |  80901    | DIG101S DIGITAL SYSTEMS 1                |  51 |      |   51 | PASS                         | 0.100|
+|2018/2 |NDELPS |  80901    | ELE100S ELECTRICAL ENGINEERING 1         |  36 |      |   36 | FAIL                         |      |
+|2018/2 |NDELPS |  80901    | ELT101S ELECTRONICS 1                    |  50 |      |   50 | PASS                         | 0.100|
+|2018/2 |NDELPS |  81599    | EPJ100S PROJECTS 1                       |  55 |      |   55 | PASS                         | 0.100|
+|2018/2 |NDELPS |  150103   | MAT206S MATHEMATICS 2                    |  14 |      |   14 | FAIL                         |      |
+|2019/1 |NDELPS |  50401    | COM105S COMMUNICATION SKILLS 1           |  20 |      |   20 | FAIL                         |      |
+|2019/1 |NDELPS |  80901    | ELE100S ELECTRICAL ENGINEERING 1         |  36 |      |   36 | FAIL                         |      |
+|2019/1 |NDELPS |  150103   | MAT206S MATHEMATICS 2                    |  54 |      |   54 | PASS                         | 0.100|
+|2019/2 |NDELPS |  60301    | CMS101S COMPUTER SKILLS 1                |  24 |      |   24 | FAIL                         |      |
+|2019/2 |NDELPS |  50401    | COM105S COMMUNICATION SKILLS 1           |  43 |      |   43 | FAIL                         |      |
+|2019/2 |NDELPS |  80901    | ELE100S ELECTRICAL ENGINEERING 1         |  58 |      |   58 | PASS                         | 0.100|
+|2019/2 |NDELPS |  150103   | MAT301S MATHEMATICS 3                    |   8 |      |    8 | FAIL                         |      |
+----------------------------------------------------------------------------------------------------------------------------------
+                                                                                        Total Credit For Subjects Passed.   0.600
+
+ ACADEMIC STATUS:                                      
+
+Qualifications Awarded
+----------------------

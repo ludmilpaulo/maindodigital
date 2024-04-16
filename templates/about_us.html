@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block content %}
+
+<section class="apply-now" id="apply">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="row">
+
+            {% for post in posts %}
+            <a href="{{post.get_absolute_url}}">
+            <div class="col-lg-12">
+              <div class="item">
+                <h3>APPLY FOR {{ post.title }}</h3>
+                <p>{{ post.body|truncatewords_html:30 }}</p>
+                <div class="main-button-red">
+                  <div class="scroll-to-section">Apply Now!</div>
+              </div>
+              </div>
+            </div>
+            </a>
+            {% endfor %}
+
+
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-6">
+          <div class="accordions is-first-expanded">
+             {% for back in about %}
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>{{back.title}}</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>{{back.content}}</p>
+                    </div>
+                </div>
+            </article>
+             {% endfor %}
+
+             {% for info in why_choose_us %}
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>{{info.title}} </span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>{{info.content}}</p>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="our-courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Our Squad</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="owl-courses-item owl-carousel">
+             {% for one in chef %}
+            <div class="item">
+              <img src="{{one.image.url}}" alt="Course One">
+              <div class="down-content">
+                <h4>{{one.title}}</h4>
+                <h2><b><p>{{one.name}}</p></b></h2>
+              </div>
+            </div>
+             {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+{% endblock %}

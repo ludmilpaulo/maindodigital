@@ -1,0 +1,26 @@
+<section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            
+            
+            <div class="col-lg-12">
+              <div class="pagination">
+                <ul>
+                   {% if page.has_previous %}
+                  <li><a href="?page={{ page.previous_page_number }}" class="prev"><i class="fa fa-angle-left" ></i></a></li>
+                   {% endif %}
+                  <li>{{ page.number }} of {{ page.paginator.num_pages }}</li>
+                   {% if page.has_next %}
+                  <li><a href="?page={{ page.next_page_number }}" class="next"><i class="fa fa-angle-right"></i></a></li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>

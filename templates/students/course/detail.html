@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load cache %}
+
+{% block title %}
+  {{ object.title }}
+{% endblock %}
+
+{% block content %}
+
+
+  <section class="upcoming-meetings" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2> {{ module.title }}</h2>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="categories">
+            <h4>Modules</h4>
+            <ul>
+              {% for m in object.modules.all %}
+                <li data-id="{{ m.id }}" {% if m == module %}class="selected"{% endif %}>
+                  <a href="{% url 'students:student_course_detail_module' object.id m.id %}">
+                    <span>
+                      Module <span class="order">{{ m.order|add:1 }}</span>
+                    </span>
+                    <br>
+                    {{ m.title }}<br>
+                  </a>
+                </li><br>
+              {% empty %}
+                <li>No modules yet.</li>
+              {% endfor %}
+            </ul>
+            <div class="main-button-red">
+              <a href="{% url 'chat:course_chat_room' object.id %}">Course chat room</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-item">
+               <div class="down-content">
+                {% cache 600 module_contents module %}
+                    {% for content in module.contents.all %}
+                      {% with item=content.item %}
+                        <h2>{{ item.title }}</h2>
+                        {{ item.render }}
+                      {% endwith %}
+                    {% endfor %}
+                  {% endcache %}
+                </div>
+               
+              </div>
+            </div>
+
+            
+         
+
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+ 
+  <div class="module">
+    
+  </div>
+{% endblock %}

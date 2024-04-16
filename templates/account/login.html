@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+<section class="contact-us" id="contact">
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card p-3 text-center">
+                <h5 class="form-text-color">Connect with us</h5>
+                <div class="d-flex justify-content-center mt-1">
+                    <ul class="social-icons">
+
+                        <li><span class="dot"><a href="{% url 'social:begin' 'facebook' %}"><i class="fa fa-facebook"></i></a></span></li>
+
+                    
+
+                        
+                        <li> <span class="dot"><a href="{% url 'social:begin' 'twitter' %}"><i class="fa fa-twitter"></i></i></span> </li>
+                        <li> <span class="dot"><a href="{% url 'social:begin' 'google-oauth2' %}">
+                          <i class="fa fa-google"></i></a></span> </li>
+                    </ul>
+                </div>
+                <h4 class="form-text-color">Login Form</h4>
+
+    
+                 <form method="post">
+        
+                    {% bootstrap_form form %}
+                    
+                      {% csrf_token %}
+                      {{form.label|linebreaks}}
+                       {% buttons %}
+                      <button type="submit" name="next" value='{{ next }}' class="btn btn-success">Login</button>
+                      {% endbuttons %}
+                      <p><a href="{% url 'accounts:password_reset' %}">Forgotten your password?</a> </p><br>
+
+                    {% if form.errors %}
+                    <p>
+                      Your username and password didn't match.
+                      Please try again.
+                    </p>
+                  {% else %}
+
+                <p>Please,If you don't have an account <a href="{% url 'accounts:register' %}">register here</a></p>
+                   
+                {% endif %}
+                  
+      
+              </form>
+                
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+    
+           
+           
+    
+  
+{% endblock %}
+
+
+    <a href='{% provider_login_url "facebook" process="connect" %}'>
+   Connect with Facebook
+</a>

@@ -1,0 +1,296 @@
+{% load static %}
+{% url 'home:home_page' as home_url %}
+{% url 'shop:product_list' as service_url %}
+{% url 'accounts:dashboard' as account_url %}
+{% url 'accounts:login' as login_url %}
+{% url 'blog:post_list' as blog_url %}
+{% url 'course_list' as course_url %}
+{% url 'home:about_us' as about_url %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="We've been doing this for a long time and the knowledge we gather from our years of experience helps us to understand how the mobile channel can help our clients in their challenges. We help brands by creating and developing compelling and strategic solutions that are not dependent on channels or platforms but instead create a link between human needs and brands.">
+    <meta name="Maindo" content="digital Agency">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Maindo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-edu-meeting.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170457108-1">
+      </script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-170457108-1');
+      </script>
+  </head>
+<body>
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v12.0&appId=201849205421522&autoLogAppEvents=1" nonce="M4plvrRj"></script>
+
+
+<!-- Messenger Chat plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "352607989159049");
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            {% if request.user.is_authenticated %}
+            <p>Welcome to <em>digital</em> Agency <b>{{request.user.username}}</b></p>
+             {% else %}
+            <p>Maindo <em>digital</em> Agency</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="https://www.facebook.com/Maindo-Digital-352607989159049"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="{% url 'home:home_page' %}" class="logo">
+                          Maindo
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                      
+
+                          <li>
+                            <a href="{{home_url}}" class="{% if request.path == home_url %}active{% endif %}">Home</a>
+                          </li>
+
+                          <li><a href="{{service_url}}" class="{% if request.path == service_url %}active{% endif %}">services</a>
+                          </li>
+
+                          {% if request.user.is_authenticated %}
+                          <li><a href="{{account_url}}" class="{% if request.path == account_url %}active{% endif %}">My dashboard</a>
+                          </li>
+
+                          <li><a href="{% url 'logout' %}">Sign out</a>
+                          </li>
+
+                          {% else %}
+                          <li><a href="{{login_url}}" class="{% if request.path == login_url %}active{% endif %}">Login</a>
+                          </li>
+
+                          <li><a href="{% url 'accounts:register' %}">Sign Up</a>
+                          </li>
+                          {% endif %}
+
+                          <li><a href="{{course_url}}" class="{% if request.path == course_url %}active{% endif %}">Courses</a>
+                          </li>
+
+                          <li><a href="{{blog_url}}" class="{% if request.path == blog_url %}active{% endif %}">Blogs</a>
+                          </li>
+
+
+                          <li><a href="{{about_url}}" class="{% if request.path == about_url %}active{% endif %}">About-Us</a>
+                          </li>
+
+                      <!--      {% for language in languages %}
+                  
+                        
+                            
+                                  <li class="sub-menu"><a href="/{{ language.code }}/" {% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>
+                              {{ language.name_local }}
+                            </a>
+                          </li>
+                -->
+                            
+                        
+                          <!-- {% endfor %}
+                           -->
+                          
+                        
+
+                      </ul>
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+{% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">
+          {{ message|safe }}
+            <a href="#" class="close">x</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+
+
+    {% block content %}
+    {% endblock %}
+<section class="contact-us" id="contact">
+    <div class="footer">
+      <p>Copyright © 2022 Maindo Digital., Ltd. All Rights Reserved.
+        <br>
+          <a href="https://www.termsfeed.com/live/ff185284-22a2-42a3-86da-ff2b31956271" target="_parent" title="free css templates">Privacy policy</a>
+          <br>
+        </p>
+    </div>
+ </section>
+
+
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'assets/js/tabs.js' %}"></script>
+    <script src="{% static 'assets/js/video.js' %}"></script>
+    <script src="{% static 'assets/js/slick-slider.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+
+
+
+
+
+    <script>
+    var csrftoken = Cookies.get('csrftoken');
+    function csrfSafeMethod(method) {
+      // these HTTP methods do not require CSRF protection
+      return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+      beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+          xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+      }
+    });
+
+    $(document).ready(function(){
+      {% block domready %}
+      {% endblock %}
+    });
+  </script>
+
+  </body>
+</html>
